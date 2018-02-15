@@ -1,0 +1,38 @@
+{
+  "name": "analytics",
+  "version": "0.0.1",
+  "description": "Analitics",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jasmine-ts \"src/main/test/**/**.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgr-myrg/analytics-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "signal",
+    "event",
+    "emitter"
+  ],
+  "author": "Roger Paul Mayorga <solidity@gmx.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rgr-myrg/analytics-ts/issues"
+  },
+  "homepage": "https://github.com/rgr-myrg/analytics-ts#readme",
+  "dependencies": {
+    "signal-slot": "^1.1.0",
+    "types": "^0.1.1",
+    "typescript": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.6",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
+    "ts-node": "^4.1.0"
+  }
+}

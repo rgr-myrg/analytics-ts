@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/rgr-myrg/analytics-ts#readme",
   "dependencies": {
-    "signal-slot": "^1.1.0",
+    "signal-slot": "^1.1.1",
     "types": "^0.1.1",
     "typescript": "^2.7.1"
   },

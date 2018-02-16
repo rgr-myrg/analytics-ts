@@ -1,6 +1,8 @@
 import {Event} from "../event/Event";
 
 export class TrackingBeacon {
+	public static NAME: string = "TrackingBeacon";
+
 	private beaconDivId: string = new Date().getTime().toLocaleString();
 	private isDevMode: boolean = false;
 	private queryString: string | undefined;

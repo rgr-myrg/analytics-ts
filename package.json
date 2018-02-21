@@ -6,7 +6,8 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jasmine-ts \"src/main/test/**/**.ts\""
+    "test": "jasmine-ts \"src/main/test/**/**.ts\"",
+    "karma": "karma start --browsers ChromeHeadless karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
   },
   "homepage": "https://github.com/rgr-myrg/analytics-ts#readme",
   "dependencies": {
+    "@types/node": "^9.4.6",
+    "mux-embed": "^2.3.2",
     "signal-slot": "^1.1.1",
     "types": "^0.1.1",
     "typescript": "^2.7.1"
@@ -33,6 +36,11 @@
     "@types/jasmine": "^2.8.6",
     "jasmine-spec-reporter": "^4.2.1",
     "jasmine-ts": "^0.2.1",
+    "karma": "^2.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-typescript": "^3.0.12",
+    "puppeteer": "^1.1.0",
     "ts-node": "^4.1.0"
   }
 }

@@ -1,10 +1,12 @@
 import {Notifier} from "signal-slot";
 import {Event} from "./event/Event";
-import {TrackingBeacon} from "./beacon/TrackingBeacon";
+import {Registrar} from "./registrar/Registrar";
+import {CBSiBeacon} from "./agent/CBSiBeacon";
+import {Comscore} from "./agent/Comscore";
 import {AgentConfig} from "./model/AgentConfig";
 
 export class Analytics extends Notifier {
-	private trackingBeacon: TrackingBeacon | undefined;
+	private registrar: Registrar = new Registrar();
 
 	constructor() {
 		super();
@@ -16,10 +18,15 @@ export class Analytics extends Notifier {
 	}
 
 	public onAgentConfigLoaded(agentConfig: AgentConfig[]): void {
-		for (let item of agentConfig) {
-			if (item.name === TrackingBeacon.NAME) {
-				this.trackingBeacon = new TrackingBeacon();
-				continue;
+		for (let config of agentConfig) {
+			switch (config.name) {
+				case CBSiBeacon.NAME:
+					this.registrar.registerCBSiBeacon(config);
+					break;
+
+				case Comscore.NAME:
+					this.registrar.registerComscore(config);
+					break;
 			}
 		}
 
@@ -29,4 +36,5 @@ export class Analytics extends Notifier {
 	public onConcurrencyBeaconRequested(params: object): void {
 		this.notify(Event.onConcurrencyBeaconRequested).with(params).queue();
 	}
+
 }

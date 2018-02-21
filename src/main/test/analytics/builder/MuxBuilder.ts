@@ -1,11 +1,9 @@
 import {MuxBuilder} from "../../../ts/analytics/builder/MuxBuilder";
-import {MuxData} from "../../../ts/analytics/model/MuxData";
-
 import * as Mux from "mux-embed";
 
 describe("MuxBuilder Spec", () => {
 	let builder: MuxBuilder;
-	let data: MuxData = {
+	let data: Mux.metadata = {
 		property_key: "e943cd86834c363d0d06a3826",
 		page_type: '', // (see docs) 'watchpage', 'iframe', or leave empty
 		viewer_user_id: "", // ex: '12345'

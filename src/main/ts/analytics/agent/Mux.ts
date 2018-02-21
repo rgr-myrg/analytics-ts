@@ -1,5 +1,5 @@
-import {MuxData} from "../model/MuxData";
 import {MuxBuilder} from "../builder/MuxBuilder";
+import * as mux_embed from "mux-embed";
 
 export class Mux {
 	public static NAME: string = "Mux";
@@ -14,7 +14,7 @@ export class Mux {
 		this.selectorId = id;
 	}
 
-	private onVideoData(data: MuxData): void {
+	private onVideoData(data: mux_embed.metadata): void {
 		console.log("[MuxSubscriber] data: ", data);
 
 		this.builder
@@ -24,7 +24,7 @@ export class Mux {
 			.build();
 	}
 
-	private onPlayStart(data: MuxData): void {
+	private onPlayStart(data: mux_embed.metadata): void {
 		if (this.hasPlayStart) {
 			this.builder
 				.setData(data)
